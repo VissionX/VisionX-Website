@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style/style.css" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VisionX - Turning vision into understanding</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <!-- <a href="#main-content" class="skip-link">Skip to main content</a> -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo"><img src="assets/images/eyee.png" alt="icon" style="width:40px; padding-top: 10px;"/></div>
+                    <nav>
+                        <a href="#">Docs</a>
+                        <a href="#">Github</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Hero Section -->
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 id="hero-title">VisionX</h1>
+                            <p class="subtitle">Voice-activated object detection for the visually impaired.</p>
+                            <a href="#about" class="cta-button" aria-label="Learn more about VisionX">
+                                <span>Hear what VisionX sees</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hero-visual" aria-label="Visual representation of object detection">
+                            <div class="scene-overlay">
+                                <div class="detection-box box1">
+                                    <span class="detection-label">Person</span>
+                                </div>
+                                <div class="detection-box box2">
+                                    <span class="detection-label">Door</span>
+                                </div>
+                                <div class="detection-box box3">
+                                    <span class="detection-label">Car</span>
+                                </div>
+                                <div class="audio-wave" aria-label="Audio feedback indicator">
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" aria-labelledby="about-title">
+                <div class="container">
+                    <h2 id="about-title" class="section-title">Understanding Through AI</h2>
+                    <p class="section-intro">
+                        A graduation project that uses AI to help visually impaired individuals understand their surroundings through voice-activated object detection.
+                    </p>
+                    <div class="about-grid">
+                        <div class="about-card" tabindex="0">
+                            <h3>The Challenge</h3>
+                            <p>
+                                Over 2.2 billion people worldwide have visual impairment. Daily tasks like identifying objects, 
+                                navigating spaces, and understanding surroundings remain challenging despite existing assistive technologies.
+                            </p>
+                        </div>
+                        <div class="about-card" tabindex="0">
+                            <h3>Our Solution</h3>
+                            <p>
+                                VisionX combines computer vision, machine learning, and speech synthesis to provide 
+                                real-time environmental descriptions. The system detects objects, understands context, 
+                                and communicates information through clear, natural audio feedback.
+               
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="process-container">
+                    <div class="title">
+                        VisionX Process Flow
+                        <div class="subtitle">Voice-Activated Object Detection System</div>
+                    </div>
+
+                    <div class="process-flow" id="flowSteps"></div>
+
+                    <div class="scene-area">
+                        <div class="scene-header">
+                            <div class="scene-status">
+                                <div class="status-dot"></div>
+                                <span id="statusText">System Ready</span>
+                            </div>
+                        </div>
+
+                        <div class="scene-stage" id="sceneStage"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <section id="features" aria-labelledby="features-title">
+                <div class="container">
+                    <h2 id="features-title" class="section-title">Core Features</h2>
+                    <div class="features-grid">
+                        <div class="feature" tabindex="0">
+                            <h3>Voice Activation</h3>
+                            <p>
+                                Offline speech recognition using Vosk allows hands-free operation. 
+                                Just say trigger words like "start" to activate detection without touching any buttons.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>AI Object Detection</h3>
+                            <p>
+                                YOLOv8 nano model provides fast, accurate detection of 80+ object classes including 
+                                people, furniture, electronics, and everyday items with >50% confidence threshold.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>Complete Privacy</h3>
+                            <p>
+                                Everything runs offline on your device. No images are uploaded, no data is stored, 
+                                and no internet connection is required after initial setup.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>Natural Language Output</h3>
+                            <p>
+                                Detections are converted to natural descriptions like "I see a person, a laptop, and 2 cups" 
+                                using intelligent grouping and counting algorithms.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>Real-Time Performance</h3>
+                            <p>
+                                Detection and response typically complete in under 1 second on modern hardware, 
+                                with a 3-second cooldown to prevent accidental triggers.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>Clean Architecture</h3>
+                            <p>
+                                Built with clean architecture principles: separate layers for domain logic, 
+                                use cases, services, and infrastructure for maintainable, testable code.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accessibility -->
+            <section id="accessibility" aria-labelledby="accessibility-title">
+                <div class="container">
+                    <h2 id="accessibility-title" class="section-title">Built for Accessibility</h2>
+                    <p class="section-intro">
+                        VisionX is designed from the ground up with accessibility at its core, ensuring that 
+                        every feature is usable, intuitive, and empowering for all users.
+                    </p>
+                    <div class="features-grid">
+                        <div class="feature" tabindex="0">
+                            <h3>Screen Reader Compatible</h3>
+                            <p>
+                                Full compatibility with industry-standard screen readers including JAWS, NVDA, 
+                                and VoiceOver for seamless integration with existing assistive tools.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>High Contrast Mode</h3>
+                            <p>
+                                Enhanced visual contrast options for users with low vision, ensuring all 
+                                interface elements meet WCAG AAA standards.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>Voice-First Interface</h3>
+                            <p>
+                                Complete voice control eliminates the need for visual interaction, providing 
+                                full functionality through speech commands alone.
+                            </p>
+                        </div>
+                        <div class="feature" tabindex="0">
+                            <h3>Keyboard Navigation</h3>
+                            <p>
+                                Every function accessible via keyboard shortcuts with clear focus indicators 
+                                and logical tab order throughout the interface.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="technology">
+                <div class="container">
+                    <h2 class="section-title">Technology Stack</h2>
+
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>YOLOv8 (Ultralytics)</h4>
+                            <p>State-of-the-art object detection with yolov8n.pt nano model for fast inference on CPU</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Vosk Speech Recognition</h4>
+                            <p>Offline speech recognition supporting multiple languages with low resource requirements</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>OpenCV</h4>
+                            <p>Camera capture and frame processing with efficient video handling</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>pyttsx3</h4>
+                            <p>Cross-platform text-to-speech engine that works offline without cloud services</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>KivyMD</h4>
+                            <p>Modern Material Design UI framework for Python with accessibility features</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Python 3.11</h4>
+                            <p>Core language with threading for concurrent audio processing and detection</p>
+                        </div>
+                    </div>
+            </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>VisionX — A Graduation Project by VissionXteam • Built with Python, YOLO, Vosk, and OpenCV</p>
+                <p style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 VisionX. Educational project for accessibility research.</p>
+                    <p><a href="#">Source Code</a></p>
+            </div>
+        </footer>
+
+
+    <script>
+        const steps = [
+            { icon: '🚀', type: 'init', title: 'App Initialization', desc: 'Load config, create supervisor, initialize services (Camera, YOLO, TTS, Vosk)' },
+            { icon: '🎤', type: 'listen', title: 'Listening Mode', desc: 'Vosk processes microphone audio, waiting for trigger words' },
+            { icon: '🗣️', type: 'voice', title: 'Voice Command Detected', desc: 'Trigger word recognized: "start", "detect", "see", or "look"' },
+            { icon: '📸', type: 'process', title: 'Capture & Process', desc: 'Camera captures frame, YOLO detects objects (confidence > 0.5)' },
+            { icon: '🔊', type: 'speak', title: 'Generate Description', desc: 'Group objects, create natural language, speak via TTS' },
+            { icon: '✓', type: 'complete', title: 'Return to Listening', desc: '3-second cooldown activated, back to listening mode' }
+        ];
+
+        const objects = [
+            { name: 'Person', x: 50, y: 80, w: 90, h: 180 },
+            { name: 'Laptop', x: 220, y: 200, w: 120, h: 80 },
+            { name: 'Cup', x: 350, y: 230, w: 50, h: 60 }
+        ];
+
+        const flowContainer = document.getElementById('flowSteps');
+        const sceneStage = document.getElementById('sceneStage');
+        const statusText = document.getElementById('statusText');
+
+        function createFlowSteps() {
+            steps.forEach((step, index) => {
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'flow-step';
+                stepDiv.id = `step-${index}`;
+                stepDiv.innerHTML = `
+                    <div class="step-icon ${step.type}">
+                        ${step.icon}
+                    </div>
+                    <div class="step-content ${step.type}">
+                        <div class="step-title">${step.title}</div>
+                        <div class="step-desc">${step.desc}</div>
+                    </div>
+                `;
+                flowContainer.appendChild(stepDiv);
+            });
+        }
+
+        function activateStep(index) {
+            document.querySelectorAll('.flow-step').forEach((step, i) => {
+                if (i === index) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        function showInitScreen() {
+            sceneStage.innerHTML = `
+                <div class="init-screen active">
+                    <div class="init-icon">⚙️</div>
+                    <div class="init-text">Initializing VisionX...</div>
+                    <div class="init-progress">
+                        <div class="init-progress-bar"></div>
+                    </div>
+                </div>
+            `;
+            statusText.textContent = 'Initializing...';
+        }
+
+        function showListeningScreen() {
+            sceneStage.innerHTML = `
+                <div class="listening-screen active">
+                    <div class="mic-icon-large">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                        </svg>
+                    </div>
+                    <div class="listening-text">Listening...</div>
+                    <div class="trigger-words">Say: "start", "detect", "see", or "look"</div>
+                </div>
+            `;
+            statusText.textContent = 'Listening for voice command';
+        }
+
+        function showVoiceCommandScreen() {
+            sceneStage.innerHTML = `
+                <div class="voice-command-screen active">
+                    <div class="voice-wave">
+                        <div class="voice-circle"></div>
+                        <div class="voice-circle"></div>
+                        <div class="voice-circle"></div>
+                    </div>
+                    <div class="voice-text">"START"</div>
+                    <div class="trigger-words">Command recognized!</div>
+                </div>
+            `;
+            statusText.textContent = 'Voice command detected';
+        }
+
+        function showDetectionScreen() {
+            sceneStage.innerHTML = `
+                <div class="detection-screen active">
+                    <div class="camera-flash" id="cameraFlash"></div>
+                    <div id="detectionsContainer"></div>
+                </div>
+            `;
+            statusText.textContent = 'Detecting objects...';
+            
+            const flash = document.getElementById('cameraFlash');
+            flash.classList.add('active');
+            
+            setTimeout(() => {
+                flash.classList.remove('active');
+                const container = document.getElementById('detectionsContainer');
+                
+                objects.forEach((obj, i) => {
+                    setTimeout(() => {
+                        const box = document.createElement('div');
+                        box.className = 'detection-box';
+                        box.style.left = obj.x + 'px';
+                        box.style.top = obj.y + 'px';
+                        box.style.width = obj.w + 'px';
+                        box.style.height = obj.h + 'px';
+                        box.style.animation = 'boxDraw 0.5s ease forwards';
+                        
+                        const label = document.createElement('span');
+                        label.className = 'detection-label';
+                        label.textContent = obj.name;
+                        
+                        box.appendChild(label);
+                        container.appendChild(box);
+                    }, i * 300);
+                });
+            }, 300);
+        }
+
+        function showSpeakScreen() {
+            const existingContent = sceneStage.innerHTML;
+            sceneStage.innerHTML = existingContent + `
+                <div class="audio-wave active">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+                <div class="result-text active">
+                    🔊 "I see a person, a laptop, and a cup"
+                </div>
+            `;
+            statusText.textContent = 'Speaking result...';
+        }
+
+        function showCompleteScreen() {
+            sceneStage.innerHTML = `
+                <div class="complete-screen active">
+                    <div class="complete-icon">✓</div>
+                    <div class="complete-text">Detection Complete</div>
+                    <div class="cooldown-timer">3-second cooldown active</div>
+                </div>
+            `;
+            statusText.textContent = 'Ready for next command';
+        }
+
+        async function runCycle() {
+            // Step 1: Init
+            activateStep(0);
+            showInitScreen();
+            await sleep(2500);
+
+            // Step 2: Listening
+            activateStep(1);
+            showListeningScreen();
+            await sleep(2500);
+
+            // Step 3: Voice Command
+            activateStep(2);
+            showVoiceCommandScreen();
+            await sleep(2000);
+
+            // Step 4: Detection
+            activateStep(3);
+            showDetectionScreen();
+            await sleep(2000);
+
+            // Step 5: Speak
+            activateStep(4);
+            showSpeakScreen();
+            await sleep(2500);
+
+            // Step 6: Complete
+            activateStep(5);
+            showCompleteScreen();
+            await sleep(2500);
+
+            // Reset and restart
+            await sleep(1000);
+            runCycle();
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        createFlowSteps();
+        runCycle();
+    </script>
+
+    </body>
+</html>
