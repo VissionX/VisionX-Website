@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style/doc.css" >
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VisionX Documentation</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    VisionX
+                    <span class="logo-subtitle">/ Documentation</span>
+                </a>
+                <nav class="header-nav">
+                    <a href="index.html">Home</a>
+                    <a href="#" class="active">Docs</a>
+                    <a href="https://github.com/VissionX">GitHub</a>
+                    <a href="#">Support</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="docs-layout">
+            <aside class="sidebar" id="sidebar">
+                <nav>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Overview</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#introduction" class="active">Introduction</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#architecture">Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Getting Started</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#installation">Installation</a></li>
+                            <li><a href="#usage">Usage</a></li>
+                            <li><a href="#trigger-words">Trigger Words</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Advanced</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#configuration">Configuration</a></li>
+                            <li><a href="#troubleshooting">Troubleshooting</a></li>
+                            <li><a href="#future">Future Enhancements</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Project</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#license">License</a></li>
+                            <li><a href="#credits">Credits</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <div class="content-wrapper">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <a href="#">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span>VisionX Documentation</span>
+                    </nav>
+
+                    <h1 class="page-title">VisionX Documentation</h1>
+                    <p class="page-description">
+                        A voice-activated object detection application designed to help visually impaired users understand their surroundings using AI.
+                    </p>
+
+                    <section class="doc-section" id="introduction">
+                        <h2>Introduction</h2>
+                        <p>
+                            VisionX is an accessible, offline object detection tool built specifically for visually impaired users. It uses voice commands to trigger real-time camera capture, runs YOLOv8 object detection, and provides natural spoken descriptions of the scene.
+                        </p>
+                        <p>
+                            The application runs entirely offline after initial setup, ensuring privacy and usability in any environment without internet access.
+                        </p>
+                    </section>
+
+                    <section class="doc-section" id="features">
+                        <h2>Features</h2>
+                        <ul>
+                            <li><strong>Voice Activation</strong>: Trigger detection with words like "start", "detect", "see", "look", or "scan"</li>
+                            <li><strong>Offline Operation</strong>: Uses Vosk for speech recognition and pyttsx3 for text-to-speech</li>
+                            <li><strong>Real-time Detection</strong>: Powered by fast YOLOv8 nano model</li>
+                            <li><strong>Natural Descriptions</strong>: Converts detected objects into clear, spoken sentences</li>
+                            <li><strong>Accessible UI</strong>: Built with KivyMD for screen-reader compatibility and simple interaction</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="architecture">
+                        <h2>Project Architecture</h2>
+                        <p>The project follows a clean, modular structure:</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">tree</span>
+                            </div>
+                            <pre><code>visionx/
+                                ├─ app/                     # UI entry point
+                                │  └─ main.py              # KivyMD application
+                                ├─ orchestrator/            # Main coordination logic
+                                │  └─ supervisor.py        # Orchestrates all services
+                                ├─ domain/                  # Business logic
+                                │  ├─ entities.py          # Data models
+                                │  └─ usecases.py          # Use cases
+                                ├─ services/                # External service wrappers
+                                │  ├─ camera.py            # Camera interface
+                                │  ├─ vision.py            # YOLO wrapper
+                                │  ├─ audio.py             # Text-to-speech
+                                │  └─ speech_recognition.py # Vosk wrapper
+                                ├─ infra/                   # Infrastructure
+                                │  └─ config.py            # Configuration
+                                └─ requirements.txt</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="doc-section" id="installation">
+                        <h2>Installation</h2>
+                        <h3>1. Install Python Dependencies</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="copy-button">Copy</button>
+                            </div>
+                            <pre><code>pip install -r requirements.txt</code></pre>
+                        </div>
+
+                        <h3>2. Download Vosk Model (English US - Small)</h3>
+                        <p>Download the small English model (~50 MB):</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="copy-button">Copy</button>
+                            </div>
+                            <pre><code>wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+                                unzip vosk-model-small-en-us-0.15.zip
+                                mv vosk-model-small-en-us-0.15 model</code></pre>
+                        </div>
+                        <p>Place the extracted folder as <code>model/</code> in the project root.</p>
+
+                        <h3>3. YOLO Model</h3>
+                        <p>The YOLOv8 nano model (<code>yolov8n.pt</code>) will be downloaded automatically on first run. If needed manually:</p>
+                        <p><a href="https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt" target="_blank">Download yolov8n.pt</a> and place in project root.</p>
+
+                        <div class="info-box success">
+                            <div class="info-box-title">✓ Ready</div>
+                            <p>You're all set! Proceed to running the app.</p>
+                        </div>
+                    </section>
+
+                    <section class="doc-section" id="usage">
+                        <h2>Usage</h2>
+                        <h3>Run the Application</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="copy-button">Copy</button>
+                            </div>
+                            <pre><code>python app/main.py</code></pre>
+                        </div>
+
+                        <h3>How It Works</h3>
+                        <ol>
+                            <li>The app starts listening for voice commands</li>
+                            <li>Say a trigger word (e.g., "start")</li>
+                            <li>Camera captures a frame</li>
+                            <li>YOLO detects objects</li>
+                            <li>App speaks a natural description</li>
+                            <li>Returns to listening mode</li>
+                        </ol>
+
+                        <div class="info-box note">
+                            <div class="info-box-title">📘 Example</div>
+                            <p><strong>User says:</strong> "start"<br>
+                                <strong>App responds:</strong> "Detecting... I see a person, a laptop, and 2 cups"</p>
+                        </div>
+                    </section>
+
+                    <section class="doc-section" id="trigger-words">
+                        <h2>Trigger Words</h2>
+                        <p>Supported voice commands:</p>
+                        <ul>
+                            <li>"start"</li>
+                            <li>"detect"</li>
+                            <li>"see"</li>
+                            <li>"look"</li>
+                            <li>"scan"</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="configuration">
+                        <h2>Configuration</h2>
+                        <p>Edit <code>infra/config.py</code> to customize:</p>
+                        <ul>
+                            <li>Camera ID and resolution</li>
+                            <li>YOLO model variant and confidence threshold</li>
+                            <li>Trigger words list</li>
+                            <li>Detection cooldown period</li>
+                            <li>Text-to-speech voice and rate</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="troubleshooting">
+                        <h2>Troubleshooting</h2>
+                        <h3>No audio output</h3>
+                        <p>Check pyttsx3 installation:</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="copy-button">Copy</button>
+                            </div>
+                            <pre><code>python -c "import pyttsx3; pyttsx3.init()"</code></pre>
+                        </div>
+
+                        <h3>Speech recognition not working</h3>
+                        <ul>
+                            <li>Verify <code>model/</code> folder exists and contains Vosk files</li>
+                            <li>Check microphone permissions</li>
+                            <li>Test with: <code>python -m sounddevice</code></li>
+                        </ul>
+
+                        <h3>Camera not found</h3>
+                        <ul>
+                            <li>Ensure webcam is connected and not in use</li>
+                            <li>Try different <code>CAMERA_ID</code> in config.py (0, 1, 2...)</li>
+                        </ul>
+
+                        <h3>YOLO model not loading</h3>
+                        <ul>
+                            <li>Requires internet on first run for auto-download</li>
+                            <li>Manual download: <a href="https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt" target="_blank">yolov8n.pt</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="future">
+                        <h2>Future Enhancements</h2>
+                        <ul>
+                            <li>Distance estimation</li>
+                            <li>Directional information (left/right/center)</li>
+                            <li>Hazard detection (stairs, obstacles)</li>
+                            <li>Object tracking across frames</li>
+                            <li>Custom object classes for indoor/outdoor scenes</li>
+                            <li>Multi-language support</li>
+                            <li>Gesture control</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="license">
+                        <h2>License</h2>
+                        <p>This project is intended for educational purposes as a graduation project.</p>
+                    </section>
+
+                    <section class="doc-section" id="credits">
+                        <h2>Credits</h2>
+                        <ul>
+                            <li>YOLOv8: <a href="https://ultralytics.com" target="_blank">Ultralytics</a></li>
+                            <li>Vosk: <a href="https://alphacephei.com/vosk" target="_blank">Alpha Cephei</a></li>
+                            <li>KivyMD: <a href="https://kivymd.readthedocs.io" target="_blank">KivyMD Team</a></li>
+                        </ul>
+                    </section>
+
+                    <nav class="doc-nav-footer">
+                        <a href="#" class="nav-link prev">
+                            <div class="nav-link-label">← Previous</div>
+                            <div class="nav-link-title">Home</div>
+                        </a>
+                        <a href="#introduction" class="nav-link next">
+                            <div class="nav-link-label">Next →</div>
+                            <div class="nav-link-title">Back to Top</div>
+                        </a>
+                    </nav>
+                </div>
+            </main>
+
+            <aside class="toc">
+                <h3 class="toc-title">On This Page</h3>
+                <ul class="toc-list">
+                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#trigger-words">Trigger Words</a></li>
+                    <li><a href="#configuration">Configuration</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#future">Future Enhancements</a></li>
+                    <li><a href="#license">License</a></li>
+                    <li><a href="#credits">Credits</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle sidebar">
+            ☰
+        </button>
+
+        <script>
+        // Mobile sidebar toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const sidebar = document.getElementById('sidebar');
+        mobileToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mobileToggle.textContent = sidebar.classList.contains('active') ? '×' : '☰';
+        });
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.closest('.code-block').querySelector('code').textContent.trim();
+                navigator.clipboard.writeText(code).then(() => {
+                    const original = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.style.background = 'rgba(52, 211, 153, 0.3)';
+                    button.style.borderColor = 'var(--accent-green)';
+                    button.style.color = 'var(--accent-green)';
+                    setTimeout(() => {
+                        button.textContent = original;
+                        button.style.background = '';
+                        button.style.borderColor = '';
+                        button.style.color = '';
+                    }, 2000);
+                });
+            });
+        });
+
+        // Smooth scrolling + active state handling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = href === '#' ? document.body : document.querySelector(href);
+                    if (target) {
+                        if (sidebar.classList.contains('active')) {
+                            sidebar.classList.remove('active');
+                            mobileToggle.textContent = '☰';
+                        }
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        history.pushState(null, null, href);
+
+                        // Update active links
+                        document.querySelectorAll('.sidebar-menu a, .toc-list a').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === href) link.classList.add('active');
+                        });
+                    }
+                }
+            });
+        });
+
+        // Highlight TOC on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.doc-section');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            let current = '';
+            sections.forEach(sec => {
+                if (window.pageYOffset >= sec.offsetTop - 150) {
+                    current = sec.getAttribute('id');
+                }
+            });
+            tocLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+            });
+        });
+        </script>
+    </body>
+</html>
