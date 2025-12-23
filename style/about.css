@@ -92,7 +92,7 @@ nav a:hover, nav a.active {
 
 /* Hero / Intro */
 .about-hero {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 10rem 0 6rem;
@@ -110,6 +110,7 @@ nav a:hover, nav a.active {
     font-weight: 300;
     letter-spacing: 0.1em;
     margin-bottom: 1.5rem;
+    font-weight: bold;
 }
 
 .about-hero p {
@@ -377,28 +378,6 @@ nav a:hover, nav a.active {
 .join-cta:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(96, 165, 250, 0.4);
-}
-
-/* Footer */
-footer {
-    padding: 4rem 0;
-    text-align: center;
-    border-top: 1px solid var(--card-border);
-}
-
-footer p {
-    color: var(--text-tertiary);
-    margin-bottom: 1rem;
-}
-
-.footer-links a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    margin: 0 1rem;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
 }
 
 /* Responsive */
