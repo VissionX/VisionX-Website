@@ -10,6 +10,9 @@
     --sidebar-width: 280px;
     --max-card-height: 220px; /* Adjust if you want taller/shorter collapsed view */
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
       font-family: "Archivo", sans-serif;
     background: linear-gradient(180deg, var(--bg-navy) 0%, var(--bg-dark) 100%);

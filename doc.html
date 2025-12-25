@@ -18,10 +18,10 @@
                 </a>
                 <nav class="header-nav">
                     <a href="index.html">Home</a>
-                    <a href="#" class="active">Docs</a>
+                    <a href="doc.html" class="active">Docs</a>
                     <a href="updates.html">Updates</a>
                     <a href="about.html">About</a>
-                    <a href="https://github.com/VissionX">GitHub</a>
+                    <a href="releases.html">Releases</a>
                 </nav>
             </div>
         </header>
@@ -38,24 +38,40 @@
                         </ul>
                     </div>
                     <div class="sidebar-section">
-                        <h3 class="sidebar-title">Getting Started</h3>
+                        <h3 class="sidebar-title">Core Application</h3>
                         <ul class="sidebar-menu">
                             <li><a href="#installation">Installation</a></li>
                             <li><a href="#usage">Usage</a></li>
                             <li><a href="#trigger-words">Trigger Words</a></li>
+                            <li><a href="#configuration">Configuration</a></li>
+                            <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Mobile App</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#mobile-overview">Overview</a></li>
+                            <li><a href="#mobile-status">Development Status</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Speech Models</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#models-overview">Overview</a></li>
+                            <li><a href="#models-status">Development Status</a></li>
                         </ul>
                     </div>
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">Advanced</h3>
                         <ul class="sidebar-menu">
-                            <li><a href="#configuration">Configuration</a></li>
-                            <li><a href="#troubleshooting">Troubleshooting</a></li>
+                            <li><a href="#api">API & Integration</a></li>
                             <li><a href="#future">Future Enhancements</a></li>
                         </ul>
                     </div>
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">Project</h3>
                         <ul class="sidebar-menu">
+                            <li><a href="#contributing">Contributing</a></li>
                             <li><a href="#license">License</a></li>
                             <li><a href="#credits">Credits</a></li>
                         </ul>
@@ -66,14 +82,14 @@
             <main class="main-content">
                 <div class="content-wrapper">
                     <nav class="breadcrumb" aria-label="Breadcrumb">
-                        <a href="#">Home</a>
+                        <a href="index.html">Home</a>
                         <span class="breadcrumb-separator">/</span>
                         <span>VisionX Documentation</span>
                     </nav>
 
                     <h1 class="page-title">VisionX Documentation</h1>
                     <p class="page-description">
-                        A voice-activated object detection application designed to help visually impaired users understand their surroundings using AI.
+                        Complete guides for all versions and components of VisionX — from the core application to upcoming mobile and model releases.
                     </p>
 
                     <section class="doc-section" id="introduction">
@@ -83,6 +99,9 @@
                         </p>
                         <p>
                             The application runs entirely offline after initial setup, ensuring privacy and usability in any environment without internet access.
+                        </p>
+                        <p>
+                            As a graduation project, VisionX is evolving with multiple components: the core desktop/web app (available now), mobile version (in development), custom speech models (planned), and more.
                         </p>
                     </section>
 
@@ -124,7 +143,7 @@
                     </section>
 
                     <section class="doc-section" id="installation">
-                        <h2>Installation</h2>
+                        <h2>Core Application Installation</h2>
                         <h3>1. Install Python Dependencies</h3>
                         <div class="code-block">
                             <div class="code-header">
@@ -158,7 +177,7 @@
                     </section>
 
                     <section class="doc-section" id="usage">
-                        <h2>Usage</h2>
+                        <h2>Core Application Usage</h2>
                         <h3>Run the Application</h3>
                         <div class="code-block">
                             <div class="code-header">
@@ -241,6 +260,63 @@
                         </ul>
                     </section>
 
+                    <section class="doc-section" id="mobile-overview">
+                        <h2>Mobile App Overview</h2>
+                        <p>The mobile version of VisionX brings the core functionality to smartphones with optimized performance for portable use.</p>
+                        <p>It will feature:</p>
+                        <ul>
+                            <li>Native mobile UI with KivyMD</li>
+                            <li>Battery-efficient listening mode</li>
+                            <li>Haptic feedback for detections</li>
+                            <li>Full offline operation</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="mobile-status">
+                        <h2>Mobile App Development Status</h2>
+                        <div class="info-box note">
+                            <div class="info-box-title">🚧 In Development</div>
+                            <p>The mobile app is currently under active development. Key features are being tested, with a release expected in early 2026.</p>
+                            <p>Follow our <a href="updates.html">Updates page</a> for progress or <a href="install.html">get notified</a> when it's ready.</p>
+                        </div>
+                    </section>
+
+                    <section class="doc-section" id="models-overview">
+                        <h2>Speech Models Overview</h2>
+                        <p>Custom speech recognition models optimized for VisionX's accessibility needs, based on Vosk with fine-tuning for command accuracy.</p>
+                        <p>Planned capabilities:</p>
+                        <ul>
+                            <li>Multi-language support</li>
+                            <li>Noise-resistant recognition</li>
+                            <li>Custom trigger word training</li>
+                            <li>Lightweight models for mobile</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section" id="models-status">
+                        <h2>Speech Models Development Status</h2>
+                        <div class="info-box note">
+                            <div class="info-box-title">📅 Planned</div>
+                            <p>Custom speech models are in the planning phase. They will be released as downloadable packages in 2026.</p>
+                            <p>Check our <a href="releases.html">Releases page</a> for updates.</p>
+                        </div>
+                    </section>
+
+                    <section class="doc-section" id="api">
+                        <h2>API & Advanced Usage</h2>
+                        <p>VisionX's modular design allows for API integration and custom extensions.</p>
+                        <p>Coming soon:</p>
+                        <ul>
+                            <li>Programmatic access to detection services</li>
+                            <li>Custom model integration guides</li>
+                            <li>Extension development tutorials</li>
+                        </ul>
+                        <div class="info-box note">
+                            <div class="info-box-title">🚧 In Planning</div>
+                            <p>API features are planned for future releases. For now, explore the source code on GitHub.</p>
+                        </div>
+                    </section>
+
                     <section class="doc-section" id="future">
                         <h2>Future Enhancements</h2>
                         <ul>
@@ -248,10 +324,24 @@
                             <li>Directional information (left/right/center)</li>
                             <li>Hazard detection (stairs, obstacles)</li>
                             <li>Object tracking across frames</li>
-                            <li>Custom object classes for indoor/outdoor scenes</li>
+                            <li>Custom object classes for indoor/outdoor environments</li>
                             <li>Multi-language support</li>
                             <li>Gesture control</li>
                         </ul>
+                    </section>
+
+                    <section class="doc-section" id="contributing">
+                        <h2>Contributing</h2>
+                        <p>VisionX is an open graduation project, and we welcome contributions from the community.</p>
+                        <h3>How to Contribute</h3>
+                        <ol>
+                            <li>Fork the repository on GitHub</li>
+                            <li>Create a feature branch</li>
+                            <li>Make your changes</li>
+                            <li>Submit a pull request</li>
+                        </ol>
+                        <p>Focus areas for contributions: bug fixes, new features, documentation improvements, model optimizations.</p>
+                        <a href="https://github.com/VissionX/VisionX" target="_blank" class="cta-button">Contribute on GitHub</a>
                     </section>
 
                     <section class="doc-section" id="license">
@@ -284,24 +374,24 @@
             <aside class="toc">
                 <h3 class="toc-title">On This Page</h3>
                 <ul class="toc-list">
-                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#introduction">Introduction</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#architecture">Architecture</a></li>
-                    <li><a href="#installation">Installation</a></li>
-                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#installation">Core Installation</a></li>
+                    <li><a href="#usage">Core Usage</a></li>
                     <li><a href="#trigger-words">Trigger Words</a></li>
                     <li><a href="#configuration">Configuration</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#mobile-overview">Mobile Overview</a></li>
+                    <li><a href="#models-overview">Models Overview</a></li>
+                    <li><a href="#api">API & Advanced</a></li>
                     <li><a href="#future">Future Enhancements</a></li>
+                    <li><a href="#contributing">Contributing</a></li>
                     <li><a href="#license">License</a></li>
                     <li><a href="#credits">Credits</a></li>
                 </ul>
             </aside>
         </div>
-
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle sidebar">
-            ☰
-        </button>
 
         <script>
         // Mobile sidebar toggle
